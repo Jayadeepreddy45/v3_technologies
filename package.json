@@ -1,16 +1,10 @@
 {
   "name": "v3_technologies_inc",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-"scripts": {
-  "build:css": "npx tailwindcss -i ./tailwind.css -o ./static/css/main.css --minify"
-}
-,
-
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "description": "Flask + Tailwind site",
+  "scripts": {
+    "build:css": "npx tailwindcss -i ./tailwind.css -o ./static/css/main.css --minify"
+  },
   "devDependencies": {
     "tailwindcss": "^4.1.10"
   }
