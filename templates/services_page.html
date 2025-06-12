@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - V3 Technologies Inc</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <meta name="description" content="Explore V3 Technologies' comprehensive technology services including software development, cloud solutions, cybersecurity, and more.">
+</head>
+<body class="bg-background">
+    <!-- Navigation Header -->
+    <header class="bg-white shadow-elevation-1 sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                  <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="{{ url_for('home') }}" class="flex items-center space-x-2">
+                        <img src="../static/Logo.png" alt="V3 Technologies Logo"
+                            class="h-10 w-auto object-contain">
+                        <span class="text-xl font-semibold text-text-primary hidden sm:inline">V3 Technologies</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="{{ url_for('home') }}"
+                            class="text-primary font-medium px-3 py-2 rounded-md text-sm">Home</a>
+                        <a href="{{ url_for('services') }}"
+                            class="text-text-secondary hover:text-primary transition-smooth px-3 py-2 rounded-md text-sm">Services</a>
+                        <a href="{{ url_for('clients') }}"
+                            class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base">Clients</a>
+                        <a href="{{ url_for('careers') }}"
+                            class="text-text-secondary hover:text-primary transition-smooth px-3 py-2 rounded-md text-sm">Careers</a>
+                        <a href="{{ url_for('contact') }}"
+                            class="text-text-secondary hover:text-primary transition-smooth px-3 py-2 rounded-md text-sm">Contact</a>
+
+                    </div>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="contact_us_page.html" class="btn-primary">Get Started</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="text-text-secondary hover:text-primary focus:outline-none focus:text-primary" onclick="toggleMobileMenu()">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-border">
+                    <a href="index.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base">Home</a>
+                    <a href="services_page.html" class="text-primary block px-3 py-2 rounded-md text-base font-medium">Services</a>
+                    <a href="careers_page.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base">Careers</a>
+                    <a href="contact_us_page.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base">Contact</a>
+                    <a href="contact_us_page.html" class="btn-primary block text-center mt-4">Get Started</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="bg-surface py-4">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <nav class="flex" aria-label="Breadcrumb">
+                <ol class="flex items-center space-x-4">
+                    <li>
+                        <div>
+                            <a href="index.html" class="text-text-secondary hover:text-primary transition-smooth">
+                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                                </svg>
+                                <span class="sr-only">Home</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex items-center">
+                            <svg class="h-5 w-5 text-text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="ml-4 text-sm font-medium text-text-primary">Services</span>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-primary-50 to-accent-100 py-16 lg:py-24">
+        <div class="absolute inset-0 bg-white/50"></div>
+        <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl lg:text-5xl font-bold text-text-primary mb-6">
+                    Our Technology <span class="text-primary">Services</span>
+                </h1>
+                <p class="text-lg lg:text-xl text-text-secondary max-w-3xl mx-auto mb-8">
+                    At V3 Technologies, we deliver comprehensive technology solutions that transform businesses and drive innovation. Our expert team combines cutting-edge technology with proven methodologies to ensure your success.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="contact_us_page.html" class="btn-primary">Get Free Consultation</a>
+                    <a href="#services-grid" class="btn-secondary">Explore Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <section class="py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-4 gap-8">
+                <!-- Sidebar -->
+                <div class="lg:col-span-1 order-2 lg:order-1">
+                    <!-- Service Categories Filter -->
+                    <div class="card mb-8">
+                        <h3 class="text-lg font-semibold text-text-primary mb-4">Service Categories</h3>
+                        <div class="space-y-3">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox text-primary" checked onclick="filterServices('all')">
+                                <span class="ml-3 text-text-secondary">All Services</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox text-primary" onclick="filterServices('development')">
+                                <span class="ml-3 text-text-secondary">Software Development</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox text-primary" onclick="filterServices('cloud')">
+                                <span class="ml-3 text-text-secondary">Cloud Solutions</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox text-primary" onclick="filterServices('security')">
+                                <span class="ml-3 text-text-secondary">Cybersecurity</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox text-primary" onclick="filterServices('consulting')">
+                                <span class="ml-3 text-text-secondary">IT Consulting</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Downloadable Resources -->
+                    <div class="card mb-8">
+                        <h3 class="text-lg font-semibold text-text-primary mb-4">Resources</h3>
+                        <div class="space-y-4">
+                            <a href="#" class="flex items-center p-3 bg-surface rounded-md hover:bg-secondary-100 transition-smooth">
+                                <svg class="h-5 w-5 text-primary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-sm text-text-secondary">Case Studies</span>
+                            </a>
+                            <a href="#" class="flex items-center p-3 bg-surface rounded-md hover:bg-secondary-100 transition-smooth">
+                                <svg class="h-5 w-5 text-primary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-sm text-text-secondary">White Papers</span>
+                            </a>
+                            <a href="#" class="flex items-center p-3 bg-surface rounded-md hover:bg-secondary-100 transition-smooth">
+                                <svg class="h-5 w-5 text-primary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-sm text-text-secondary">Service Brochure</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="card">
+                        <h3 class="text-lg font-semibold text-text-primary mb-4">Need Help?</h3>
+                        <p class="text-text-secondary mb-4">Speak with our experts to find the right solution for your business.</p>
+                        <div class="space-y-3">
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 text-primary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                                </svg>
+                                <span class="text-sm text-text-secondary">(555) 123-4567</span>
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 text-primary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                                </svg>
+                                <span class="text-sm text-text-secondary">services@v3tech.com</span>
+                            </div>
+                        </div>
+                        <a href="contact_us_page.html" class="btn-primary w-full mt-4 text-center block">Contact Us</a>
+                    </div>
+                </div>
+
+                <!-- Services Grid -->
+                <div class="lg:col-span-3 order-1 lg:order-2">
+                    <div id="services-grid" class="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+                        <!-- Software Development Service -->
+                        <div class="card group hover:shadow-elevation-3 transition-all duration-300" data-category="development">
+                            <div class="bg-primary-50 p-4 rounded-xl w-fit mb-6 group-hover:bg-primary-100 transition-smooth">
+                                <svg class="h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-text-primary mb-3">Custom Software Development</h3>
+                            <p class="text-text-secondary mb-4">Build scalable, robust applications tailored to your business needs using modern technologies and best practices.</p>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-center text-sm text-text-secondary">
+                                    <svg class="h-4 w-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Full-stack development
+                                </li>
+                                <li class="flex items-center text-sm text-text-secondary">
+                                    <svg class="h-4 w-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    API development & integration
+                                </li>
+                                <li class="flex items-center text-sm text-text-secondary">
+                                    <svg class="h-4 w-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Quality assurance & testing
+                                </li>
+                            </ul>
+                            <a href="contact_us_page.html" class="btn-primary w-full text-center">Get Quote</a>
+                        </div>
+
+                        <!-- Cloud Solutions Service -->
+                        <div class="card group hover:shadow-elevation-3 transition-all duration-300" data-category="cloud">
+                            <div class="bg-accent-100 p-4 rounded-xl w-fit mb-6 group-hover:bg-accent-200 transition-smooth">
+                                <svg class="h-8 w-8 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z" clip-rule="evenodd"/>
+                                    <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V9a1 1 0 00-1-1h-1v-1z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-text-primary mb-3">Cloud Infrastructure</h3>
+                            <p class="text-text-secondary mb-4">Migrate and optimize your infrastructure with secure, scalable cloud solutions that reduce costs and improve performance.</p>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-center text-sm text-text-secondary">
+                                    <svg class="h-4 w-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Cloud migration strategy
+                                </li>
+                                <li class="flex items-center text-sm text-text-secondary">
+                                    <svg class="h-4 w-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Multi-cloud management
+                                </li>
+                                <li class="flex items-center text-sm text-text-secondary">
+                                    <svg class="h-4 w-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    24/7 monitoring & support
+                                </li>
+                            </ul>
+                            <a href="contact_us_page.html" class="btn-primary w-full text-center">Get Quote</a>
+                        </div>
+
+                        <!-- Cybersecurity Service -->
+                        <div class="card group hover:shadow-elevation-3 transition-all duration-300" data-category="security">
+                            <div class="bg-success-100 p-4 rounded-xl w-fit mb-6 group-hover:bg-success-200 transition-smooth">
+                                <svg class="h-8 w-8 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-text-primary mb-3">Cybersecurity Solutions</h3>
+                            <p class="text-text-secondary mb-4">Protect your digital assets with comprehensive security solutions designed to prevent threats and ensure compliance.</p>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-center text-sm text-text-secondary">
+                                    <svg class="h-4 w-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Security assessments
+                                </li>
+                                <li class="flex items-center text-sm text-text-secondary">
+                                    <svg class="h-4 w-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Threat monitoring
+                                </li>
+                                <li class="flex items-center text-sm text-text-secondary">
+                                    <svg class="h-4 w-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Compliance management
+                                </li>
+                            </ul>
+                            <a href="contact_us_page.html" class="btn-primary w-full text-center">Get Quote</a>
+                        </div>
+
+                        <!-- IT Consulting Service -->
+                        <div class="card group hover:shadow-elevation-3 transition-all duration-300" data-category="consulting">
+                            <div class="bg-warning-100 p-4 rounded-xl w-fit mb-6 group-hover:bg-warning-200 transition-smooth">
+                                <svg class="h-8 w-8 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-text-primary mb-3">IT Strategy Consulting</h3>
+                            <p class="text-text-secondary mb-4">Strategic technology guidance to align your IT infrastructure with business objectives and drive digital transformation.</p>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-center text-sm text-text-secondary">
+                                    <svg class="h-4 w-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Technology roadmapping
+                                </li>
+                                <li class="flex items-center text-sm text-text-secondary">
+                                    <svg class="h-4 w-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Digital transformation
+                                </li>
+                                <li class="flex items-center text-sm text-text-secondary">
+                                    <svg class="h-4 w-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Process optimization
+                                </li>
+                            </ul>
+                            <a href="contact_us_page.html" class="btn-primary w-full text-center">Get Quote</a>
+                        </div>
+
+                        <!-- Data Analytics Service -->
+                        <div class="card group hover:shadow-elevation-3 transition-all duration-300" data-category="development">
+                            <div class="bg-primary-50 p-4 rounded-xl w-fit mb-6 group-hover:bg-primary-100 transition-smooth">
+                                <svg class="h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-text-primary mb-3">Data Analytics & BI</h3>
+                            <p class="text-text-secondary mb-4">Transform your data into actionable insights with advanced analytics and business intelligence solutions.</p>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-center text-sm text-text-secondary">
+                                    <svg class="h-4 w-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Data visualization
+                                </li>
+                                <li class="flex items-center text-sm text-text-secondary">
+                                    <svg class="h-4 w-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Predictive analytics
+                                </li>
+                                <li class="flex items-center text-sm text-text-secondary">
+                                    <svg class="h-4 w-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Custom dashboards
+                                </li>
+                            </ul>
+                            <a href="contact_us_page.html" class="btn-primary w-full text-center">Get Quote</a>
+                        </div>
+
+                        <!-- Mobile App Development Service -->
+                        <div class="card group hover:shadow-elevation-3 transition-all duration-300" data-category="development">
+                            <div class="bg-accent-100 p-4 rounded-xl w-fit mb-6 group-hover:bg-accent-200 transition-smooth">
+                                <svg class="h-8 w-8 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M7 2a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2V4a2 2 0 00-2-2H7zm3 14a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-text-primary mb-3">Mobile App Development</h3>
+                            <p class="text-text-secondary mb-4">Create engaging mobile experiences with native and cross-platform applications that delight users and drive business growth.</p>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-center text-sm text-text-secondary">
+                                    <svg class="h-4 w-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    iOS & Android development
+                                </li>
+                                <li class="flex items-center text-sm text-text-secondary">
+                                    <svg class="h-4 w-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Cross-platform solutions
+                                </li>
+                                <li class="flex items-center text-sm text-text-secondary">
+                                    <svg class="h-4 w-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    App store optimization
+                                </li>
+                            </ul>
+                            <a href="contact_us_page.html" class="btn-primary w-full text-center">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Success Stories -->
+    <section class="py-16 bg-surface">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-text-primary mb-4">Client Success Stories</h2>
+                <p class="text-lg text-text-secondary max-w-3xl mx-auto">
+                    See how our services have transformed businesses across various industries.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Success Story 1 -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?q=80&w=2826&auto=format&fit=crop&ixlib=rb-4.0.3" 
+                         alt="TechCorp office building" 
+                         class="w-full h-48 object-cover rounded-lg mb-4"
+                         loading="lazy"
+                         onerror="this.src='https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;">
+                    <h3 class="text-lg font-semibold text-text-primary mb-2">TechCorp Solutions</h3>
+                    <p class="text-text-secondary mb-4">40% cost reduction through cloud migration and infrastructure optimization.</p>
+                    <div class="flex items-center text-sm text-primary">
+                        <span>Read Case Study</span>
+                        <svg class="ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Success Story 2 -->
+                <div class="card">
+                    <img src="https://images.pixabay.com/photo/2016/11/19/14/00/code-1839406_1280.jpg" 
+                         alt="InnovateCorp development team" 
+                         class="w-full h-48 object-cover rounded-lg mb-4"
+                         loading="lazy"
+                         onerror="this.src='https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;">
+                    <h3 class="text-lg font-semibold text-text-primary mb-2">InnovateCorp</h3>
+                    <p class="text-text-secondary mb-4">Custom software solution streamlined operations and improved efficiency by 60%.</p>
+                    <div class="flex items-center text-sm text-primary">
+                        <span>Read Case Study</span>
+                        <svg class="ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Success Story 3 -->
+                <div class="card">
+                    <img src="https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                         alt="SecureFinance security operations center" 
+                         class="w-full h-48 object-cover rounded-lg mb-4"
+                         loading="lazy"
+                         onerror="this.src='https://images.pixabay.com/photo/2018/05/14/16/54/cyber-3400789_1280.jpg'; this.onerror=null;">
+                    <h3 class="text-lg font-semibold text-text-primary mb-2">SecureFinance</h3>
+                    <p class="text-text-secondary mb-4">Comprehensive cybersecurity implementation prevented multiple security threats.</p>
+                    <div class="flex items-center text-sm text-primary">
+                        <span>Read Case Study</span>
+                        <svg class="ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-text-primary mb-4">Our Certifications</h2>
+                <p class="text-lg text-text-secondary max-w-3xl mx-auto">
+                    Industry-recognized certifications that demonstrate our commitment to excellence and security.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+                <div class="text-center">
+                    <div class="bg-surface p-6 rounded-lg mb-4">
+                        <div class="text-2xl font-bold text-primary">ISO</div>
+                        <div class="text-lg font-semibold text-text-primary">27001</div>
+                    </div>
+                    <p class="text-sm text-text-secondary">Information Security</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-surface p-6 rounded-lg mb-4">
+                        <div class="text-2xl font-bold text-primary">SOC</div>
+                        <div class="text-lg font-semibold text-text-primary">2</div>
+                    </div>
+                    <p class="text-sm text-text-secondary">Service Organization</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-surface p-6 rounded-lg mb-4">
+                        <div class="text-2xl font-bold text-primary">AWS</div>
+                        <div class="text-lg font-semibold text-text-primary">Partner</div>
+                    </div>
+                    <p class="text-sm text-text-secondary">Cloud Solutions</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-surface p-6 rounded-lg mb-4">
+                        <div class="text-2xl font-bold text-primary">CMMI</div>
+                        <div class="text-lg font-semibold text-text-primary">Level 3</div>
+                    </div>
+                    <p class="text-sm text-text-secondary">Process Maturity</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-surface">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-text-primary mb-4">Frequently Asked Questions</h2>
+                <p class="text-lg text-text-secondary">
+                    Common questions about our services and how we can help your business.
+                </p>
+            </div>
+
+            <div class="space-y-6">
+                <!-- FAQ Item 1 -->
+                <div class="card">
+                    <button class="w-full text-left flex justify-between items-center" onclick="toggleFAQ(1)">
+                        <h3 class="text-lg font-semibold text-text-primary">What industries do you serve?</h3>
+                        <svg id="faq-icon-1" class="h-5 w-5 text-text-secondary transform transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </button>
+                    <div id="faq-content-1" class="hidden mt-4">
+                        <p class="text-text-secondary">We serve a wide range of industries including healthcare, finance, retail, manufacturing, and technology. Our solutions are tailored to meet the specific needs and compliance requirements of each industry.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="card">
+                    <button class="w-full text-left flex justify-between items-center" onclick="toggleFAQ(2)">
+                        <h3 class="text-lg font-semibold text-text-primary">How long does a typical project take?</h3>
+                        <svg id="faq-icon-2" class="h-5 w-5 text-text-secondary transform transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </button>
+                    <div id="faq-content-2" class="hidden mt-4">
+                        <p class="text-text-secondary">Project timelines vary based on scope and complexity. Simple applications may take 2-3 months, while enterprise solutions can take 6-12 months. We provide detailed timelines during the planning phase.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="card">
+                    <button class="w-full text-left flex justify-between items-center" onclick="toggleFAQ(3)">
+                        <h3 class="text-lg font-semibold text-text-primary">Do you provide ongoing support?</h3>
+                        <svg id="faq-icon-3" class="h-5 w-5 text-text-secondary transform transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </button>
+                    <div id="faq-content-3" class="hidden mt-4">
+                        <p class="text-text-secondary">Yes, we offer comprehensive support and maintenance packages including 24/7 monitoring, regular updates, security patches, and technical support to ensure your systems run smoothly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-br from-primary to-primary-700">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6">Ready to Transform Your Business?</h2>
+            <p class="text-lg text-primary-100 mb-8 max-w-2xl mx-auto">
+                Let's discuss how our technology solutions can drive your business forward. Get a free consultation with our experts.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact_us_page.html" class="bg-white text-primary px-8 py-3 rounded-md font-medium hover:bg-primary-50 transition-smooth">Start Your Project</a>
+                <a href="contact_us_page.html" class="border-2 border-white text-white px-8 py-3 rounded-md font-medium hover:bg-white hover:text-primary transition-smooth">Schedule Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-text-primary text-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center mb-6">
+                        <svg class="h-8 w-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M16 2L4 8v16l12 6 12-6V8L16 2zm0 4l8 4v12l-8 4-8-4V10l8-4z"/>
+                            <path d="M12 12h8v2h-8zm0 4h8v2h-8zm0 4h6v2h-6z"/>
+                        </svg>
+                        <span class="ml-2 text-xl font-semibold">V3 Technologies Inc</span>
+                    </div>
+                    <p class="text-secondary-300 mb-6 max-w-md">
+                        Transforming businesses through innovative technology solutions. We deliver cutting-edge software, cloud services, and cybersecurity solutions that drive growth and success.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-secondary-300 hover:text-white transition-smooth">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-secondary-300 hover:text-white transition-smooth">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-secondary-300 hover:text-white transition-smooth">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24c6.624 0 11.99-5.367 11.99-11.987C24.007 5.367 18.641.001 12.017.001z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+                    <ul class="space-y-4">
+                        <li><a href="index.html" class="text-secondary-300 hover:text-white transition-smooth">Home</a></li>
+                        <li><a href="services_page.html" class="text-secondary-300 hover:text-white transition-smooth">Services</a></li>
+                        <li><a href="careers_page.html" class="text-secondary-300 hover:text-white transition-smooth">Careers</a></li>
+                        <li><a href="contact_us_page.html" class="text-secondary-300 hover:text-white transition-smooth">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Contact Info</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-primary mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-secondary-300">123 Tech Street, Silicon Valley, CA 94025</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 text-primary mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                            </svg>
+                            <span class="text-secondary-300">(555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 text-primary mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                            </svg>
+                            <span class="text-secondary-300">info@v3technologies.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-secondary-700 mt-12 pt-8 text-center">
+                <p class="text-secondary-300">© 2025 V3 Technologies Inc. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        function filterServices(category) {
+            const serviceCards = document.querySelectorAll('[data-category]');
+            
+            if (category === 'all') {
+                serviceCards.forEach(card => {
+                    card.style.display = 'block';
+                });
+            } else {
+                serviceCards.forEach(card => {
+                    if (card.dataset.category === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+        }
+
+        function toggleFAQ(index) {
+            const content = document.getElementById(`faq-content-${index}`);
+            const icon = document.getElementById(`faq-icon-${index}`);
+            
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuButton = event.target.closest('button');
+            
+            if (!menuButton && !mobileMenu.contains(event.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+<script id="dhws-elementInspector" src="../public/dhws-web-inspector.js"></script>
+<script id="dhws-errorTracker" src="../public/dhws-error-tracker.js"></script>
+</body>
+</html>

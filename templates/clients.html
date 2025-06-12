@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clients - V3 Technologies Inc</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+
+<body class="bg-background">
+
+  <!-- Navigation Header -->
+  <header class="bg-white shadow-elevation-1 sticky top-0 z-50">
+    <nav class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <a href="index.html" class="flex items-center space-x-2">
+            <img src="../static/Logo.png" alt="V3 Technologies Logo" class="h-10 w-auto object-contain" />
+            <span class="text-xl font-semibold text-text-primary hidden sm:inline">V3 Technologies</span>
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-center space-x-8">
+            <a href="{{ url_for('home') }}" class="text-primary font-medium px-3 py-2 rounded-md text-sm">Home</a>
+            <a href="{{ url_for('services') }}"
+              class="text-text-secondary hover:text-primary transition-smooth px-3 py-2 rounded-md text-sm">Services</a>
+            <a href="{{ url_for('clients') }}"
+              class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base">Clients</a>
+            <a href="{{ url_for('careers') }}"
+              class="text-text-secondary hover:text-primary transition-smooth px-3 py-2 rounded-md text-sm">Careers</a>
+            <a href="{{ url_for('contact') }}"
+              class="text-text-secondary hover:text-primary transition-smooth px-3 py-2 rounded-md text-sm">Contact</a>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="hidden md:block">
+          <a href="contact_us_page.html" class="btn-primary">Get Started</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button onclick="toggleMobileMenu()" class="text-text-secondary hover:text-primary focus:outline-none">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div id="mobile-menu" class="md:hidden hidden">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-border">
+          <a href="index.html"
+            class="block px-3 py-2 rounded-md text-base text-text-secondary hover:text-primary">Home</a>
+          <a href="services_page.html"
+            class="block px-3 py-2 rounded-md text-base text-text-secondary hover:text-primary">Services</a>
+          <a href="clients.html" class="block px-3 py-2 rounded-md text-base text-primary font-medium">Clients</a>
+          <a href="careers_page.html"
+            class="block px-3 py-2 rounded-md text-base text-text-secondary hover:text-primary">Careers</a>
+          <a href="contact_us_page.html"
+            class="block px-3 py-2 rounded-md text-base text-text-secondary hover:text-primary">Contact</a>
+          <a href="contact_us_page.html" class="btn-primary block text-center mt-4">Get Started</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-white py-12">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+      <h1 class="text-4xl font-bold text-text-primary mb-4">Our Trusted Clients</h1>
+      <p class="text-text-secondary text-lg">We proudly serve top organizations across industries</p>
+    </div>
+  </section>
+
+  <!-- Clients Grid -->
+  <section class="bg-gray-50 py-12">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-start">
+
+        <!-- Client Cards -->
+        <div class="bg-white p-4 rounded-lg shadow flex flex-col items-center justify-between h-44">
+          <img src="../static/ssa.png" alt="SSA" class="h-16 object-contain mb-2">
+          <p class="text-base font-medium text-text-secondary text-center">Social Security Administration</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow flex flex-col items-center justify-between h-44">
+          <img src="../static/Leidos.png" alt="Leidos" class="h-16 object-contain mb-2">
+          <p class="text-base font-medium text-text-secondary text-center">Leidos</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow flex flex-col items-center justify-between h-44">
+          <img src="../static/lockheed.png" alt="Lockheed Martin" class="h-16 object-contain mb-2">
+          <p class="text-base font-medium text-text-secondary text-center">Lockheed Martin</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow flex flex-col items-center justify-between h-44">
+          <img src="../static/nih.jpg" alt="NIH" class="h-16 object-contain mb-2">
+          <p class="text-base font-medium text-text-secondary text-center">National Institute of Health</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow flex flex-col items-center justify-between h-44">
+          <img src="../static/finra.png" alt="FINRA" class="h-16 object-contain mb-2">
+          <p class="text-base font-medium text-text-secondary text-center">FINRA</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow flex flex-col items-center justify-between h-44">
+          <img src="../static/cap.png" alt="Capital One" class="h-16 object-contain mb-2">
+          <p class="text-base font-medium text-text-secondary text-center">Capital One</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow flex flex-col items-center justify-between h-44">
+          <img src="../static/verizon.png" alt="Verizon" class="h-16 object-contain mb-2">
+          <p class="text-base font-medium text-text-secondary text-center">Verizon Business</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow flex flex-col items-center justify-between h-44">
+          <img src="../static/time.png" alt="Time Warner Cable" class="h-16 object-contain mb-2">
+          <p class="text-base font-medium text-text-secondary text-center">Time Warner Cable</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow flex flex-col items-center justify-between h-44">
+          <img src="../static/spectrum.png" alt="Spectrum" class="h-16 object-contain mb-2">
+          <p class="text-base font-medium text-text-secondary text-center">Spectrum</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow flex flex-col items-center justify-between h-44">
+          <img src="../static/ftc.png" alt="FTC" class="h-16 object-contain mb-2">
+          <p class="text-base font-medium text-text-secondary text-center">Federal Trade Commission</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</body>
+
+</html>

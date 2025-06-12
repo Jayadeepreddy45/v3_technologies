@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - V3 Technologies Inc</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <meta name="description"
+    content="Get in touch with V3 Technologies Inc. Contact our team for technology solutions, partnerships, and support.">
+</head>
+
+<body class="bg-background">
+  <!-- Navigation Header -->
+  <header class="bg-white shadow-elevation-1 sticky top-0 z-50">
+    <nav class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <a href="homepage.html" class="flex items-center space-x-2">
+            <img src="../static/Logo.png" alt="V3 Technologies Logo" class="h-10 w-auto object-contain">
+            <span class="text-xl font-semibold text-text-primary hidden sm:inline">V3 Technologies</span>
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-8">
+            <a href="{{ url_for('home') }}" class="text-primary font-medium px-3 py-2 rounded-md text-sm">Home</a>
+            <a href="{{ url_for('services') }}"
+              class="text-text-secondary hover:text-primary transition-smooth px-3 py-2 rounded-md text-sm">Services</a>
+            <a href="{{ url_for('clients') }}"
+              class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base">Clients</a>
+            <a href="{{ url_for('careers') }}"
+              class="text-text-secondary hover:text-primary transition-smooth px-3 py-2 rounded-md text-sm">Careers</a>
+            <a href="{{ url_for('contact') }}"
+              class="text-text-secondary hover:text-primary transition-smooth px-3 py-2 rounded-md text-sm">Contact</a>
+          </div>
+        </div>
+
+        <!-- CTA Button -->
+        <div class="hidden md:block">
+          <a href="contact_us_page.html" class="btn-primary">Get Started</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button type="button" class="text-text-secondary hover:text-primary focus:outline-none focus:text-primary"
+            onclick="toggleMobileMenu()">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div id="mobile-menu" class="md:hidden hidden">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-border">
+          <a href="homepage.html"
+            class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base">Home</a>
+          <a href="services_page.html"
+            class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base">Services</a>
+          <a href="careers_page.html"
+            class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base">Careers</a>
+          <a href="contact_us_page.html"
+            class="text-primary block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+          <a href="contact_us_page.html" class="btn-primary block text-center mt-4">Get Started</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-primary-50 to-accent-100 overflow-hidden">
+    <div class="absolute inset-0 bg-white/50"></div>
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-24">
+      <div class="text-center">
+        <h1 class="text-4xl lg:text-5xl font-bold text-text-primary mb-6 leading-tight">
+          Get in Touch with
+          <span class="text-primary">V3 Technologies</span>
+        </h1>
+        <p class="text-lg lg:text-xl text-text-secondary mb-8 max-w-3xl mx-auto">
+          Ready to transform your business with cutting-edge technology solutions? We're here to help you
+          succeed. Contact our expert team today.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Contact Section -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16">
+        <!-- Contact Information -->
+        <div>
+          <h2 class="text-3xl font-bold text-text-primary mb-8">Contact Information</h2>
+
+          <!-- Company Details -->
+          <div class="space-y-8">
+            <!-- Address -->
+            <div class="flex items-start">
+              <div class="bg-primary-50 p-3 rounded-xl mr-4 flex-shrink-0">
+                <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd"
+                    d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                    clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-text-primary mb-2">Headquarters</h3>
+                <p class="text-text-secondary">
+                  USA Office:<br>
+                  21252 Barley Hall Ter<br>
+                  Ashburn VA 20147
+                </p>
+              </div>
+            </div>
+
+            <!-- India Office -->
+            <div class="flex items-start">
+              <div class="bg-primary-50 p-3 rounded-xl mr-4 flex-shrink-0">
+                <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd"
+                    d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                    clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-text-primary mb-2">Other Office</h3>
+                <p class="text-text-secondary">
+                  India Office:<br>
+                  Plot No.63, H.No- 4-9-548/9<br>
+                  New Ashok Nagar, Hyderabad<br>
+                  Telangana, India - 500059
+                </p>
+              </div>
+            </div>
+
+
+
+
+            <!-- Phone
+                    <div class="flex items-start">
+                        <div class="bg-accent-100 p-3 rounded-xl mr-4 flex-shrink-0">
+                            <svg class="h-6 w-6 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-text-primary mb-2">Phone</h3>
+                            <p class="text-text-secondary">(555) 123-4567</p>
+                            <p class="text-sm text-text-secondary mt-1">Monday - Friday, 9:00 AM - 6:00 PM PST</p>
+                        </div>
+                    </div> -->
+
+            <!-- Email -->
+            <div class="flex items-start">
+              <div class="bg-success-100 p-3 rounded-xl mr-4 flex-shrink-0">
+                <svg class="h-6 w-6 text-success" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-text-primary mb-2">Email</h3>
+                <div class="space-y-1">
+                  <p class="text-text-secondary">General: info@v3technologies.com</p>
+                  <p class="text-text-secondary">Sales: sales@v3technologies.com</p>
+                  <p class="text-text-secondary">Support: support@v3technologies.com</p>
+                  <p class="text-text-secondary">HR: careers@v3technologies.com</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Business Hours -->
+            <div class="flex items-start">
+              <div class="bg-warning-100 p-3 rounded-xl mr-4 flex-shrink-0">
+                <svg class="h-6 w-6 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                    clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-text-primary mb-2">Business Hours</h3>
+                <div class="space-y-1 text-text-secondary">
+                  <p>Monday - Friday: 9:00 AM - 6:00 PM PST</p>
+                  <p>Saturday: 10:00 AM - 2:00 PM PST</p>
+                  <p>Sunday: Closed</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Map Section -->
+          <div class="mt-12">
+            <h3 class="text-lg font-semibold text-text-primary mb-4">Find Us</h3>
+            <div class="bg-surface rounded-xl p-6 border border-border">
+              <div class="aspect-w-16 aspect-h-9 bg-secondary-100 rounded-lg mb-4 flex items-center justify-center">
+                <img
+                  src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3"
+                  alt="V3 Technologies office location map" class="w-full h-48 object-cover rounded-lg" loading="lazy"
+                  onerror="this.src='https://images.pexels.com/photos/1647962/pexels-photo-1647962.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;">
+              </div>
+              <a href="#"
+                class="text-primary font-medium hover:text-primary-700 transition-smooth inline-flex items-center">
+                Get Directions
+                <svg class="ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd"
+                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div>
+          <div class="card">
+            <h2 class="text-3xl font-bold text-text-primary mb-8">Send us a Message</h2>
+
+            <form id="contactForm" class="space-y-6">
+              <!-- Name -->
+              <div>
+                <label for="name" class="form-label">Full Name *</label>
+                <input type="text" id="name" name="name" class="form-input" required>
+                <div id="nameError" class="text-error text-sm mt-1 hidden">Please enter your full name
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div>
+                <label for="email" class="form-label">Email Address *</label>
+                <input type="email" id="email" name="email" class="form-input" required>
+                <div id="emailError" class="text-error text-sm mt-1 hidden">Please enter a valid email
+                  address</div>
+              </div>
+
+              <!-- Phone -->
+              <div>
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="form-input" placeholder="(555) 123-4567">
+                <div id="phoneError" class="text-error text-sm mt-1 hidden">Please enter a valid phone
+                  number</div>
+              </div>
+
+              <!-- Company -->
+              <div>
+                <label for="company" class="form-label">Company</label>
+                <input type="text" id="company" name="company" class="form-input">
+              </div>
+
+              <!-- Inquiry Type -->
+              <div>
+                <label for="inquiryType" class="form-label">Inquiry Type *</label>
+                <select id="inquiryType" name="inquiryType" class="form-input" required>
+                  <option value="">Select inquiry type</option>
+                  <option value="general">General Inquiry</option>
+                  <option value="services">Services</option>
+                  <option value="partnerships">Partnerships</option>
+                  <option value="support">Support</option>
+                </select>
+                <div id="inquiryTypeError" class="text-error text-sm mt-1 hidden">Please select an
+                  inquiry
+                  type</div>
+              </div>
+
+              <!-- Message -->
+              <div>
+                <label for="message" class="form-label">Message *</label>
+                <textarea id="message" name="message" rows="6" class="form-input"
+                  placeholder="Tell us about your project or inquiry..." required></textarea>
+                <div id="messageError" class="text-error text-sm mt-1 hidden">Please enter your message
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <form action="/submit_contact" method="POST" class="space-y-4">
+                <input type="text" name="name" placeholder="Your Name" required class="input">
+                <input type="email" name="email" placeholder="Your Email" required class="input">
+                <textarea name="message" placeholder="Your Message" required class="input"></textarea>
+                <button type="submit" class="btn-primary">Send Message</button>
+              </form>
+
+
+              <!-- Success Message -->
+              <div id="successMessage" class="bg-success-100 border border-success text-success p-4 rounded-md hidden">
+                <div class="flex items-center">
+                  <svg class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  Thank you! Your message has been sent successfully. We'll get back to you within 24
+                  hours.
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- Response Time Info -->
+          <div class="mt-8 bg-surface p-6 rounded-xl">
+            <h3 class="text-lg font-semibold text-text-primary mb-4">What to Expect</h3>
+            <div class="space-y-3">
+              <div class="flex items-center">
+                <svg class="h-5 w-5 text-primary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span class="text-text-secondary">Response within 24 hours</span>
+              </div>
+              <div class="flex items-center">
+                <svg class="h-5 w-5 text-primary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span class="text-text-secondary">Free consultation available</span>
+              </div>
+              <div class="flex items-center">
+                <svg class="h-5 w-5 text-primary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span class="text-text-secondary">Dedicated project manager assigned</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Additional Contact Options -->
+  <section class="py-24 bg-surface">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl lg:text-4xl font-bold text-text-primary mb-4">Other Ways to Connect</h2>
+        <p class="text-lg text-text-secondary max-w-3xl mx-auto">
+          Choose the communication method that works best for you. We're here to help in any way we can.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Social Media -->
+        <div class="card text-center">
+          <div class="bg-primary-50 p-4 rounded-xl w-fit mx-auto mb-6">
+            <svg class="h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-text-primary mb-3">Follow Us</h3>
+          <p class="text-text-secondary mb-6">Stay updated with our latest news, insights, and technology
+            trends.</p>
+          <div class="flex justify-center space-x-4">
+            <a href="#" class="text-primary hover:text-primary-700 transition-smooth">
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+              </svg>
+            </a>
+            <a href="#" class="text-primary hover:text-primary-700 transition-smooth">
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="card text-center">
+          <div class="bg-accent-100 p-4 rounded-xl w-fit mx-auto mb-6">
+            <svg class="h-8 w-8 text-accent" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-text-primary mb-3">Newsletter</h3>
+          <p class="text-text-secondary mb-6">Subscribe to receive technology insights and company updates.
+          </p>
+          <div class="flex">
+            <input type="email" placeholder="Enter your email" class="form-input rounded-r-none">
+            <button class="bg-accent text-white px-4 py-3 rounded-r-md hover:bg-accent-600 transition-smooth">
+              Subscribe
+            </button>
+          </div>
+        </div>
+
+        <!-- Live Chat -->
+        <div class="card text-center">
+          <div class="bg-success-100 p-4 rounded-xl w-fit mx-auto mb-6">
+            <svg class="h-8 w-8 text-success" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd"
+                d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"
+                clip-rule="evenodd" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-text-primary mb-3">Live Chat</h3>
+          <p class="text-text-secondary mb-6">Get instant answers to your questions from our support team.</p>
+          <button class="btn-primary w-full">
+            Start Chat
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-text-primary text-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Company Info -->
+        <div class="lg:col-span-2">
+          <div class="flex items-center mb-6">
+            <svg class="h-8 w-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+              <path d="M16 2L4 8v16l12 6 12-6V8L16 2zm0 4l8 4v12l-8 4-8-4V10l8-4z" />
+              <path d="M12 12h8v2h-8zm0 4h8v2h-8zm0 4h6v2h-6z" />
+            </svg>
+            <span class="ml-2 text-xl font-semibold">V3 Technologies Inc</span>
+          </div>
+          <p class="text-secondary-300 mb-6 max-w-md">
+            Transforming businesses through innovative technology solutions. We deliver cutting-edge
+            software, cloud services, and cybersecurity solutions that drive growth and success.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-secondary-300 hover:text-white transition-smooth">
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+              </svg>
+            </a>
+            <a href="#" class="text-secondary-300 hover:text-white transition-smooth">
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+            </a>
+            <a href="#" class="text-secondary-300 hover:text-white transition-smooth">
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24c6.624 0 11.99-5.367 11.99-11.987C24.007 5.367 18.641.001 12.017.001z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+          <ul class="space-y-4">
+            <li><a href="homepage.html" class="text-secondary-300 hover:text-white transition-smooth">Home</a></li>
+            <li><a href="services_page.html" class="text-secondary-300 hover:text-white transition-smooth">Services</a>
+            </li>
+            <li><a href="careers_page.html" class="text-secondary-300 hover:text-white transition-smooth">Careers</a>
+            </li>
+            <li><a href="contact_us_page.html" class="text-secondary-300 hover:text-white transition-smooth">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h3 class="text-lg font-semibold mb-6">Contact Info</h3>
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <svg class="h-5 w-5 text-primary mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                  d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                  clip-rule="evenodd" />
+              </svg>
+              <span class="text-secondary-300">123 Tech Street, Silicon Valley, CA 94025</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="h-5 w-5 text-primary mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+              </svg>
+              <span class="text-secondary-300">(555) 123-4567</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="h-5 w-5 text-primary mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+              </svg>
+              <span class="text-secondary-300">info@v3technologies.com</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-secondary-700 mt-12 pt-8 text-center">
+        <p class="text-secondary-300">© 2025 V3 Technologies Inc. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenu.classList.toggle('hidden');
+    }
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function (event) {
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuButton = event.target.closest('button');
+
+      if (!menuButton && !mobileMenu.contains(event.target)) {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+
+    // Contact Form Validation and Submission
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Reset previous errors
+      const errorElements = document.querySelectorAll('[id$="Error"]');
+      errorElements.forEach(el => el.classList.add('hidden'));
+
+      let isValid = true;
+
+      // Validate name
+      const name = document.getElementById('name').value.trim();
+      if (!name) {
+        document.getElementById('nameError').classList.remove('hidden');
+        isValid = false;
+      }
+
+      // Validate email
+      const email = document.getElementById('email').value.trim();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email || !emailRegex.test(email)) {
+        document.getElementById('emailError').classList.remove('hidden');
+        isValid = false;
+      }
+
+      // Validate phone (if provided)
+      const phone = document.getElementById('phone').value.trim();
+      const phoneRegex = /^\(\d{3}\)\s\d{3}-\d{4}$/;
+      if (phone && !phoneRegex.test(phone)) {
+        document.getElementById('phoneError').classList.remove('hidden');
+        isValid = false;
+      }
+
+      // Validate inquiry type
+      const inquiryType = document.getElementById('inquiryType').value;
+      if (!inquiryType) {
+        document.getElementById('inquiryTypeError').classList.remove('hidden');
+        isValid = false;
+      }
+
+      // Validate message
+      const message = document.getElementById('message').value.trim();
+      if (!message) {
+        document.getElementById('messageError').classList.remove('hidden');
+        isValid = false;
+      }
+
+      if (isValid) {
+        // Show success message
+        document.getElementById('successMessage').classList.remove('hidden');
+
+        // Reset form
+        this.reset();
+
+        // Hide success message after 5 seconds
+        setTimeout(() => {
+          document.getElementById('successMessage').classList.add('hidden');
+        }, 5000);
+      }
+    });
+
+    // Phone number formatting
+    document.getElementById('phone').addEventListener('input', function (e) {
+      let value = e.target.value.replace(/\D/g, '');
+      if (value.length >= 6) {
+        value = `(${value.slice(0, 3)}) ${value.slice(3, 6)}-${value.slice(6, 10)}`;
+      } else if (value.length >= 3) {
+        value = `(${value.slice(0, 3)}) ${value.slice(3)}`;
+      }
+      e.target.value = value;
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+  <script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+  <script id="dhws-elementInspector" src="../public/dhws-web-inspector.js"></script>
+  <script id="dhws-errorTracker" src="../public/dhws-error-tracker.js"></script>
+</body>
+
+</html>

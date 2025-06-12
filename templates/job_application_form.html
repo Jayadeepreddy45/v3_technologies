@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Form - V3 Technologies Inc</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <meta name="description" content="Apply for exciting career opportunities at V3 Technologies Inc. Submit your application with our comprehensive online form.">
+</head>
+<body class="bg-background">
+    <!-- Navigation Header -->
+    <header class="bg-white shadow-elevation-1 sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                  <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <img src="../static/Logo.png" alt="V3 Technologies Logo"
+                            class="h-10 w-auto object-contain">
+                        <span class="text-xl font-semibold text-text-primary hidden sm:inline">V3 Technologies</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="text-text-secondary hover:text-primary transition-smooth px-3 py-2 rounded-md text-sm">Home</a>
+                        <a href="services_page.html" class="text-text-secondary hover:text-primary transition-smooth px-3 py-2 rounded-md text-sm">Services</a>
+                        <a href="careers_page.html" class="text-text-secondary hover:text-primary transition-smooth px-3 py-2 rounded-md text-sm">Careers</a>
+                        <a href="contact_us_page.html" class="text-text-secondary hover:text-primary transition-smooth px-3 py-2 rounded-md text-sm">Contact</a>
+                    </div>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="contact_us_page.html" class="btn-primary">Get Started</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="text-text-secondary hover:text-primary focus:outline-none focus:text-primary" onclick="toggleMobileMenu()">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-border">
+                    <a href="index.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base">Home</a>
+                    <a href="services_page.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base">Services</a>
+                    <a href="careers_page.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base">Careers</a>
+                    <a href="contact_us_page.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base">Contact</a>
+                    <a href="contact_us_page.html" class="btn-primary block text-center mt-4">Get Started</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Progress Indicator -->
+    <section class="bg-surface py-4">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <a href="careers_page.html" class="text-text-secondary hover:text-primary transition-smooth text-sm">
+                        <svg class="h-4 w-4 inline mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd"/>
+                        </svg>
+                        Back to Careers
+                    </a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2">
+                        <div class="h-2 w-8 bg-primary rounded-full"></div>
+                        <div class="h-2 w-8 bg-secondary-200 rounded-full"></div>
+                        <div class="h-2 w-8 bg-secondary-200 rounded-full"></div>
+                        <div class="h-2 w-8 bg-secondary-200 rounded-full"></div>
+                    </div>
+                    <span class="text-sm text-text-secondary">Step 1 of 4</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Application Form -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-12">
+                <!-- Form Section -->
+                <div class="lg:col-span-2">
+                    <div class="mb-8">
+                        <h1 class="text-3xl lg:text-4xl font-bold text-text-primary mb-4">Apply for Position</h1>
+                        <p class="text-lg text-text-secondary">Join our innovative team and help shape the future of technology. Complete the application form below to get started.</p>
+                    </div>
+
+                    <form id="job-application-form" class="space-y-8">
+                        <!-- Personal Information Section -->
+                        <div class="card">
+                            <h2 class="text-xl font-semibold text-text-primary mb-6 flex items-center">
+                                <svg class="h-5 w-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+                                </svg>
+                                Personal Information
+                            </h2>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="firstName" class="form-label">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" class="form-input" required>
+                                    <div class="error-message hidden text-error text-sm mt-1"></div>
+                                </div>
+                                <div>
+                                    <label for="lastName" class="form-label">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" class="form-input" required>
+                                    <div class="error-message hidden text-error text-sm mt-1"></div>
+                                </div>
+                                <div>
+                                    <label for="email" class="form-label">Email Address *</label>
+                                    <input type="email" id="email" name="email" class="form-input" required>
+                                    <div class="error-message hidden text-error text-sm mt-1"></div>
+                                </div>
+                                <div>
+                                    <label for="phone" class="form-label">Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" class="form-input" placeholder="(555) 123-4567" required>
+                                    <div class="error-message hidden text-error text-sm mt-1"></div>
+                                </div>
+                                <div class="md:col-span-2">
+                                    <label for="address" class="form-label">Address *</label>
+                                    <input type="text" id="address" name="address" class="form-input" placeholder="123 Main Street" required>
+                                    <div class="error-message hidden text-error text-sm mt-1"></div>
+                                </div>
+                                <div>
+                                    <label for="city" class="form-label">City *</label>
+                                    <input type="text" id="city" name="city" class="form-input" required>
+                                    <div class="error-message hidden text-error text-sm mt-1"></div>
+                                </div>
+                                <div>
+                                    <label for="state" class="form-label">State *</label>
+                                    <select id="state" name="state" class="form-input" required>
+                                        <option value="">Select State</option>
+                                        <option value="CA">California</option>
+                                        <option value="NY">New York</option>
+                                        <option value="TX">Texas</option>
+                                        <option value="FL">Florida</option>
+                                        <option value="WA">Washington</option>
+                                        <option value="OR">Oregon</option>
+                                        <option value="NV">Nevada</option>
+                                        <option value="AZ">Arizona</option>
+                                    </select>
+                                    <div class="error-message hidden text-error text-sm mt-1"></div>
+                                </div>
+                                <div>
+                                    <label for="zipCode" class="form-label">ZIP Code *</label>
+                                    <input type="text" id="zipCode" name="zipCode" class="form-input" placeholder="12345" required>
+                                    <div class="error-message hidden text-error text-sm mt-1"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Work Experience Section -->
+                        <div class="card">
+                            <h2 class="text-xl font-semibold text-text-primary mb-6 flex items-center">
+                                <svg class="h-5 w-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2h2zm4-3a1 1 0 00-1 1v1h2V4a1 1 0 00-1-1zM8 8a1 1 0 000 2h4a1 1 0 100-2H8z" clip-rule="evenodd"/>
+                                </svg>
+                                Work Experience
+                            </h2>
+                            <div class="space-y-6">
+                                <div>
+                                    <label for="currentPosition" class="form-label">Current/Most Recent Position</label>
+                                    <input type="text" id="currentPosition" name="currentPosition" class="form-input" placeholder="Software Engineer">
+                                </div>
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="currentCompany" class="form-label">Company Name</label>
+                                        <input type="text" id="currentCompany" name="currentCompany" class="form-input" placeholder="Tech Company Inc">
+                                    </div>
+                                    <div>
+                                        <label for="experienceYears" class="form-label">Years of Experience *</label>
+                                        <select id="experienceYears" name="experienceYears" class="form-input" required>
+                                            <option value="">Select Experience</option>
+                                            <option value="0-1">0-1 years</option>
+                                            <option value="2-3">2-3 years</option>
+                                            <option value="4-5">4-5 years</option>
+                                            <option value="6-10">6-10 years</option>
+                                            <option value="10+">10+ years</option>
+                                        </select>
+                                        <div class="error-message hidden text-error text-sm mt-1"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="workDescription" class="form-label">Brief Description of Current Role</label>
+                                    <textarea id="workDescription" name="workDescription" rows="4" class="form-input" placeholder="Describe your current responsibilities and achievements..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Education Section -->
+                        <div class="card">
+                            <h2 class="text-xl font-semibold text-text-primary mb-6 flex items-center">
+                                <svg class="h-5 w-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                                </svg>
+                                Education
+                            </h2>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="education" class="form-label">Highest Education Level *</label>
+                                    <select id="education" name="education" class="form-input" required>
+                                        <option value="">Select Education</option>
+                                        <option value="high-school">High School Diploma</option>
+                                        <option value="associate">Associate Degree</option>
+                                        <option value="bachelor">Bachelor's Degree</option>
+                                        <option value="master">Master's Degree</option>
+                                        <option value="phd">PhD/Doctorate</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                    <div class="error-message hidden text-error text-sm mt-1"></div>
+                                </div>
+                                <div>
+                                    <label for="fieldOfStudy" class="form-label">Field of Study</label>
+                                    <input type="text" id="fieldOfStudy" name="fieldOfStudy" class="form-input" placeholder="Computer Science">
+                                </div>
+                                <div>
+                                    <label for="institution" class="form-label">Institution Name</label>
+                                    <input type="text" id="institution" name="institution" class="form-input" placeholder="University Name">
+                                </div>
+                                <div>
+                                    <label for="graduationYear" class="form-label">Graduation Year</label>
+                                    <input type="number" id="graduationYear" name="graduationYear" class="form-input" placeholder="2020" min="1950" max="2030">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Skills Assessment Section -->
+                        <div class="card">
+                            <h2 class="text-xl font-semibold text-text-primary mb-6 flex items-center">
+                                <svg class="h-5 w-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
+                                </svg>
+                                Skills & Expertise
+                            </h2>
+                            <div class="space-y-6">
+                                <div>
+                                    <label for="technicalSkills" class="form-label">Technical Skills *</label>
+                                    <textarea id="technicalSkills" name="technicalSkills" rows="3" class="form-input" placeholder="List your technical skills (e.g., JavaScript, Python, React, AWS...)" required></textarea>
+                                    <div class="error-message hidden text-error text-sm mt-1"></div>
+                                </div>
+                                <div>
+                                    <label for="softSkills" class="form-label">Soft Skills</label>
+                                    <textarea id="softSkills" name="softSkills" rows="3" class="form-input" placeholder="List your soft skills (e.g., Leadership, Communication, Problem-solving...)"></textarea>
+                                </div>
+                                <div>
+                                    <label for="certifications" class="form-label">Certifications</label>
+                                    <textarea id="certifications" name="certifications" rows="2" class="form-input" placeholder="List any relevant certifications..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- File Upload Section -->
+                        <div class="card">
+                            <h2 class="text-xl font-semibold text-text-primary mb-6 flex items-center">
+                                <svg class="h-5 w-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                                Documents
+                            </h2>
+                            <div class="space-y-6">
+                                <!-- Resume Upload -->
+                                <div>
+                                    <label class="form-label">Resume/CV *</label>
+                                    <div class="border-2 border-dashed border-border rounded-lg p-6 text-center hover:border-primary transition-smooth" id="resume-dropzone">
+                                        <svg class="mx-auto h-12 w-12 text-secondary-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+                                        </svg>
+                                        <div class="text-sm text-text-secondary">
+                                            <label for="resume" class="cursor-pointer text-primary hover:text-primary-700 font-medium">
+                                                Click to upload
+                                            </label>
+                                            or drag and drop
+                                        </div>
+                                        <p class="text-xs text-text-secondary mt-1">PDF, DOC, DOCX up to 10MB</p>
+                                        <input id="resume" name="resume" type="file" class="hidden" accept=".pdf,.doc,.docx" required>
+                                    </div>
+                                    <div id="resume-preview" class="hidden mt-4 p-4 bg-success-100 rounded-lg">
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center">
+                                                <svg class="h-5 w-5 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                                </svg>
+                                                <span class="text-sm text-success font-medium" id="resume-filename"></span>
+                                            </div>
+                                            <button type="button" class="text-error hover:text-error-700" onclick="removeFile('resume')">
+                                                <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="error-message hidden text-error text-sm mt-1"></div>
+                                </div>
+
+                                <!-- Cover Letter Upload -->
+                                <div>
+                                    <label class="form-label">Cover Letter (Optional)</label>
+                                    <div class="border-2 border-dashed border-border rounded-lg p-6 text-center hover:border-primary transition-smooth" id="cover-letter-dropzone">
+                                        <svg class="mx-auto h-12 w-12 text-secondary-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+                                        </svg>
+                                        <div class="text-sm text-text-secondary">
+                                            <label for="coverLetter" class="cursor-pointer text-primary hover:text-primary-700 font-medium">
+                                                Click to upload
+                                            </label>
+                                            or drag and drop
+                                        </div>
+                                        <p class="text-xs text-text-secondary mt-1">PDF, DOC, DOCX up to 10MB</p>
+                                        <input id="coverLetter" name="coverLetter" type="file" class="hidden" accept=".pdf,.doc,.docx">
+                                    </div>
+                                    <div id="cover-letter-preview" class="hidden mt-4 p-4 bg-success-100 rounded-lg">
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center">
+                                                <svg class="h-5 w-5 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                                </svg>
+                                                <span class="text-sm text-success font-medium" id="cover-letter-filename"></span>
+                                            </div>
+                                            <button type="button" class="text-error hover:text-error-700" onclick="removeFile('coverLetter')">
+                                                <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Additional Information Section -->
+                        <div class="card">
+                            <h2 class="text-xl font-semibold text-text-primary mb-6 flex items-center">
+                                <svg class="h-5 w-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                                </svg>
+                                Additional Information
+                            </h2>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="availability" class="form-label">Availability *</label>
+                                    <select id="availability" name="availability" class="form-input" required>
+                                        <option value="">Select Availability</option>
+                                        <option value="immediate">Immediate</option>
+                                        <option value="2-weeks">2 weeks notice</option>
+                                        <option value="1-month">1 month</option>
+                                        <option value="2-months">2 months</option>
+                                        <option value="3-months">3+ months</option>
+                                    </select>
+                                    <div class="error-message hidden text-error text-sm mt-1"></div>
+                                </div>
+                                <div>
+                                    <label for="salaryExpectation" class="form-label">Salary Expectation (USD)</label>
+                                    <input type="text" id="salaryExpectation" name="salaryExpectation" class="form-input" placeholder="$75,000 - $90,000">
+                                </div>
+                                <div class="md:col-span-2">
+                                    <label for="workLocation" class="form-label">Preferred Work Location *</label>
+                                    <div class="space-y-2">
+                                        <label class="flex items-center">
+                                            <input type="radio" name="workLocation" value="remote" class="text-primary focus:ring-primary">
+                                            <span class="ml-2 text-text-secondary">Remote</span>
+                                        </label>
+                                        <label class="flex items-center">
+                                            <input type="radio" name="workLocation" value="hybrid" class="text-primary focus:ring-primary">
+                                            <span class="ml-2 text-text-secondary">Hybrid</span>
+                                        </label>
+                                        <label class="flex items-center">
+                                            <input type="radio" name="workLocation" value="onsite" class="text-primary focus:ring-primary">
+                                            <span class="ml-2 text-text-secondary">On-site</span>
+                                        </label>
+                                        <label class="flex items-center">
+                                            <input type="radio" name="workLocation" value="flexible" class="text-primary focus:ring-primary">
+                                            <span class="ml-2 text-text-secondary">Flexible</span>
+                                        </label>
+                                    </div>
+                                    <div class="error-message hidden text-error text-sm mt-1"></div>
+                                </div>
+                                <div class="md:col-span-2">
+                                    <label for="additionalInfo" class="form-label">Additional Comments</label>
+                                    <textarea id="additionalInfo" name="additionalInfo" rows="4" class="form-input" placeholder="Any additional information you'd like to share..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Form Actions -->
+                        <div class="flex flex-col sm:flex-row gap-4 justify-between">
+                            <button type="button" class="btn-secondary" onclick="saveProgress()">
+                                <svg class="h-4 w-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M7.707 10.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 12.586V5a1 1 0 10-2 0v7.586l-1.293-1.293z"/>
+                                </svg>
+                                Save
+                            </button>
+                            <button type="submit" class="btn-primary">
+                                Submit
+                                <svg class="h-4 w-4 ml-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Job Details Sidebar -->
+                <div class="lg:col-span-1">
+                    <div class="sticky top-24 space-y-6">
+                        <!-- Job Details Card -->
+                        <div class="card">
+                            <h3 class="text-lg font-semibold text-text-primary mb-4">Position Details</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="font-medium text-text-primary">Senior Software Engineer</h4>
+                                    <p class="text-sm text-text-secondary">Full-time • Remote/Hybrid</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium text-text-primary text-sm mb-2">Department</h5>
+                                    <p class="text-sm text-text-secondary">Engineering</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium text-text-primary text-sm mb-2">Location</h5>
+                                    <p class="text-sm text-text-secondary">San Francisco, CA (Remote options available)</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium text-text-primary text-sm mb-2">Salary Range</h5>
+                                    <p class="text-sm text-text-secondary">$120,000 - $160,000</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Requirements Card -->
+                        <div class="card">
+                            <h3 class="text-lg font-semibold text-text-primary mb-4">Key Requirements</h3>
+                            <ul class="space-y-2 text-sm text-text-secondary">
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-success mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    5+ years software development experience
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-success mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Proficiency in JavaScript, React, Node.js
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-success mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Experience with cloud platforms (AWS/Azure)
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-success mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Strong problem-solving skills
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-success mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Bachelor's degree in Computer Science or related field
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Application Tips Card -->
+                        <div class="card bg-primary-50 border-primary-100">
+                            <h3 class="text-lg font-semibold text-text-primary mb-4">Application Tips</h3>
+                            <ul class="space-y-3 text-sm text-text-secondary">
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-primary mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Ensure your resume is up-to-date and highlights relevant experience
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-primary mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Double-check all information for accuracy
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-primary mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Include specific examples of your achievements
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="h-4 w-4 text-primary mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Save your progress regularly to avoid data loss
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Contact Support -->
+                        <div class="card">
+                            <h3 class="text-lg font-semibold text-text-primary mb-4">Need Help?</h3>
+                            <p class="text-sm text-text-secondary mb-4">Having trouble with your application? Our HR team is here to help.</p>
+                            <a href="contact_us_page.html" class="btn-secondary w-full text-center">Contact Support</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-text-primary text-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center mb-6">
+                        <svg class="h-8 w-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M16 2L4 8v16l12 6 12-6V8L16 2zm0 4l8 4v12l-8 4-8-4V10l8-4z"/>
+                            <path d="M12 12h8v2h-8zm0 4h8v2h-8zm0 4h6v2h-6z"/>
+                        </svg>
+                        <span class="ml-2 text-xl font-semibold">V3 Technologies Inc</span>
+                    </div>
+                    <p class="text-secondary-300 mb-6 max-w-md">
+                        Transforming businesses through innovative technology solutions. We deliver cutting-edge software, cloud services, and cybersecurity solutions that drive growth and success.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-secondary-300 hover:text-white transition-smooth">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-secondary-300 hover:text-white transition-smooth">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-secondary-300 hover:text-white transition-smooth">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24c6.624 0 11.99-5.367 11.99-11.987C24.007 5.367 18.641.001 12.017.001z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+                    <ul class="space-y-4">
+                        <li><a href="index.html" class="text-secondary-300 hover:text-white transition-smooth">Home</a></li>
+                        <li><a href="services_page.html" class="text-secondary-300 hover:text-white transition-smooth">Services</a></li>
+                        <li><a href="careers_page.html" class="text-secondary-300 hover:text-white transition-smooth">Careers</a></li>
+                        <li><a href="contact_us_page.html" class="text-secondary-300 hover:text-white transition-smooth">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Contact Info</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-primary mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-secondary-300">123 Tech Street, Silicon Valley, CA 94025</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 text-primary mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                            </svg>
+                            <span class="text-secondary-300">(555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 text-primary mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                            </svg>
+                            <span class="text-secondary-300">info@v3technologies.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-secondary-700 mt-12 pt-8 text-center">
+                <p class="text-secondary-300">© 2025 V3 Technologies Inc. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Form validation and submission
+        document.getElementById('job-application-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (validateForm()) {
+                showSuccessMessage();
+                // Here you would typically send the form data to your server
+                console.log('Form submitted successfully');
+            }
+        });
+
+        // Real-time validation
+        function validateForm() {
+            let isValid = true;
+            const requiredFields = ['firstName', 'lastName', 'email', 'phone', 'address', 'city', 'state', 'zipCode', 'experienceYears', 'education', 'technicalSkills', 'availability', 'resume'];
+            
+            requiredFields.forEach(fieldName => {
+                const field = document.getElementById(fieldName) || document.querySelector(`input[name="${fieldName}"]:checked`);
+                const errorDiv = document.querySelector(`#${fieldName}`)?.parentNode.querySelector('.error-message') || 
+                                document.querySelector(`input[name="${fieldName}"]`)?.closest('.card').querySelector('.error-message');
+                
+                if (!field || (field.type === 'file' ? !field.files.length : !field.value.trim())) {
+                    if (errorDiv) {
+                        errorDiv.textContent = 'This field is required';
+                        errorDiv.classList.remove('hidden');
+                    }
+                    isValid = false;
+                } else {
+                    if (errorDiv) {
+                        errorDiv.classList.add('hidden');
+                    }
+                }
+            });
+
+            // Email validation
+            const email = document.getElementById('email');
+            const emailError = email.parentNode.querySelector('.error-message');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (email.value && !emailRegex.test(email.value)) {
+                emailError.textContent = 'Please enter a valid email address';
+                emailError.classList.remove('hidden');
+                isValid = false;
+            }
+
+            // Phone validation
+            const phone = document.getElementById('phone');
+            const phoneError = phone.parentNode.querySelector('.error-message');
+            const phoneRegex = /^\(\d{3}\)\s\d{3}-\d{4}$/;
+            
+            if (phone.value && !phoneRegex.test(phone.value)) {
+                phoneError.textContent = 'Please enter phone in format (555) 123-4567';
+                phoneError.classList.remove('hidden');
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        // Phone number formatting
+        document.getElementById('phone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length >= 6) {
+                value = `(${value.slice(0,3)}) ${value.slice(3,6)}-${value.slice(6,10)}`;
+            } else if (value.length >= 3) {
+                value = `(${value.slice(0,3)}) ${value.slice(3)}`;
+            }
+            e.target.value = value;
+        });
+
+        // File upload handling
+        function setupFileUpload(inputId, dropzoneId, previewId, filenameId) {
+            const input = document.getElementById(inputId);
+            const dropzone = document.getElementById(dropzoneId);
+            const preview = document.getElementById(previewId);
+            const filename = document.getElementById(filenameId);
+
+            // Drag and drop events
+            dropzone.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                dropzone.classList.add('border-primary', 'bg-primary-50');
+            });
+
+            dropzone.addEventListener('dragleave', function(e) {
+                e.preventDefault();
+                dropzone.classList.remove('border-primary', 'bg-primary-50');
+            });
+
+            dropzone.addEventListener('drop', function(e) {
+                e.preventDefault();
+                dropzone.classList.remove('border-primary', 'bg-primary-50');
+                
+                const files = e.dataTransfer.files;
+                if (files.length > 0) {
+                    handleFileUpload(files[0], input, preview, filename);
+                }
+            });
+
+            // File input change
+            input.addEventListener('change', function(e) {
+                if (e.target.files.length > 0) {
+                    handleFileUpload(e.target.files[0], input, preview, filename);
+                }
+            });
+        }
+
+        function handleFileUpload(file, input, preview, filename) {
+            const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+            const maxSize = 10 * 1024 * 1024; // 10MB
+
+            if (!allowedTypes.includes(file.type)) {
+                alert('Please upload a PDF, DOC, or DOCX file.');
+                return;
+            }
+
+            if (file.size > maxSize) {
+                alert('File size must be less than 10MB.');
+                return;
+            }
+
+            // Create a new FileList with the dropped file
+            const dt = new DataTransfer();
+            dt.items.add(file);
+            input.files = dt.files;
+
+            // Show preview
+            filename.textContent = file.name;
+            preview.classList.remove('hidden');
+        }
+
+        function removeFile(inputId) {
+            const input = document.getElementById(inputId);
+            const preview = document.getElementById(inputId === 'resume' ? 'resume-preview' : 'cover-letter-preview');
+            
+            input.value = '';
+            preview.classList.add('hidden');
+        }
+
+        // Initialize file uploads
+        setupFileUpload('resume', 'resume-dropzone', 'resume-preview', 'resume-filename');
+        setupFileUpload('coverLetter', 'cover-letter-dropzone', 'cover-letter-preview', 'cover-letter-filename');
+
+        // Auto-save functionality
+        function saveProgress() {
+            const formData = new FormData(document.getElementById('job-application-form'));
+            const data = {};
+            
+            for (let [key, value] of formData.entries()) {
+                if (key !== 'resume' && key !== 'coverLetter') {
+                    data[key] = value;
+                }
+            }
+            
+            localStorage.setItem('jobApplicationProgress', JSON.stringify(data));
+            
+            // Show save confirmation
+            const saveBtn = event.target;
+            const originalText = saveBtn.innerHTML;
+            saveBtn.innerHTML = '<svg class="h-4 w-4 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Saved!';
+            saveBtn.classList.add('bg-success', 'hover:bg-success');
+            
+            setTimeout(() => {
+                saveBtn.innerHTML = originalText;
+                saveBtn.classList.remove('bg-success', 'hover:bg-success');
+            }, 2000);
+        }
+
+        // Load saved progress
+        function loadProgress() {
+            const saved = localStorage.getItem('jobApplicationProgress');
+            if (saved) {
+                const data = JSON.parse(saved);
+                
+                Object.keys(data).forEach(key => {
+                    const field = document.getElementById(key) || document.querySelector(`input[name="${key}"]`);
+                    if (field) {
+                        if (field.type === 'radio') {
+                            const radioField = document.querySelector(`input[name="${key}"][value="${data[key]}"]`);
+                            if (radioField) radioField.checked = true;
+                        } else {
+                            field.value = data[key];
+                        }
+                    }
+                });
+            }
+        }
+
+        // Success message
+        function showSuccessMessage() {
+            const successHTML = `
+                <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                    <div class="bg-white rounded-lg p-8 max-w-md mx-4 text-center">
+                        <svg class="h-16 w-16 text-success mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <h3 class="text-xl font-semibold text-text-primary mb-2">Application Submitted!</h3>
+                        <p class="text-text-secondary mb-4">Thank you for your interest in V3 Technologies. We'll review your application and get back to you within 5-7 business days.</p>
+                        <p class="text-sm text-text-secondary mb-6">Reference Number: <span class="font-mono text-primary">#APP-${Date.now()}</span></p>
+                        <button onclick="this.parentElement.parentElement.remove(); window.location.href='careers_page.html'" class="btn-primary">
+                            Back to Careers
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            document.body.insertAdjacentHTML('beforeend', successHTML);
+            localStorage.removeItem('jobApplicationProgress');
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+            
+            // Auto-save every 30 seconds
+            setInterval(() => {
+                const formData = new FormData(document.getElementById('job-application-form'));
+                const data = {};
+                
+                for (let [key, value] of formData.entries()) {
+                    if (key !== 'resume' && key !== 'coverLetter' && value.trim()) {
+                        data[key] = value;
+                    }
+                }
+                
+                if (Object.keys(data).length > 0) {
+                    localStorage.setItem('jobApplicationProgress', JSON.stringify(data));
+                }
+            }, 30000);
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuButton = event.target.closest('button');
+            
+            if (!menuButton && !mobileMenu.contains(event.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+<script id="dhws-elementInspector" src="../public/dhws-web-inspector.js"></script>
+<script id="dhws-errorTracker" src="../public/dhws-error-tracker.js"></script>
+</body>
+</html>

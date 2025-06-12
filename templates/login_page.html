@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - V3 Technologies Inc</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <meta name="description" content="Secure login portal for V3 Technologies Inc team members and administrators.">
+</head>
+<body class="bg-surface min-h-screen">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 bg-gradient-to-br from-primary-50 to-accent-100 opacity-50"></div>
+    
+    <!-- Main Content -->
+    <div class="relative min-h-screen flex items-center justify-center py-12 px-6">
+        <div class="max-w-md w-full space-y-8">
+            <!-- Header -->
+            <div class="text-center">
+                <a href="index.html" class="inline-flex items-center justify-center mb-8">
+                    <img src="../static/Logo.png" alt="V3 Technologies Logo" class="h-12 w-auto">
+                    <span class="ml-3 text-2xl font-bold text-text-primary">V3 Technologies</span>
+                </a>
+                <h2 class="text-3xl font-bold text-text-primary mb-2">Welcome Back</h2>
+                <p class="text-text-secondary">Sign in to access your account</p>
+            </div>
+
+            <!-- Login Form -->
+            <div class="card shadow-elevation-3">
+                <form id="login-form" class="space-y-6">
+                    <!-- Username/Email Field -->
+                    <div>
+                        <label for="username" class="form-label">Username or Email *</label>
+                        <div class="relative">
+                            <input type="text" id="username" name="username" class="form-input pl-10" placeholder="Enter your username or email" required>
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <svg class="h-5 w-5 text-secondary-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div id="username-error" class="error-message hidden text-error text-sm mt-1"></div>
+                    </div>
+
+                    <!-- Password Field -->
+                    <div>
+                        <label for="password" class="form-label">Password *</label>
+                        <div class="relative">
+                            <input type="password" id="password" name="password" class="form-input pl-10 pr-10" placeholder="Enter your password" required>
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <svg class="h-5 w-5 text-secondary-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <button type="button" id="toggle-password" class="absolute inset-y-0 right-0 pr-3 flex items-center">
+                                <svg id="eye-open" class="h-5 w-5 text-secondary-400 hover:text-primary transition-smooth" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                </svg>
+                                <svg id="eye-closed" class="h-5 w-5 text-secondary-400 hover:text-primary transition-smooth hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L12 12m0 0l3.12 3.12M15 15l6-6"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div id="password-error" class="error-message hidden text-error text-sm mt-1"></div>
+                    </div>
+
+                    <!-- Role Selection -->
+                    <div>
+                        <label for="role" class="form-label">Account Type *</label>
+                        <select id="role" name="role" class="form-input" required>
+                            <option value="">Select your role</option>
+                            <option value="user">User</option>
+                            <option value="admin">Administrator</option>
+                        </select>
+                        <div id="role-error" class="error-message hidden text-error text-sm mt-1"></div>
+                    </div>
+
+                    <!-- Remember Me & Forgot Password -->
+                    <div class="flex items-center justify-between">
+                        <label class="flex items-center">
+                            <input type="checkbox" id="remember-me" name="remember-me" class="h-4 w-4 text-primary focus:ring-primary border-border rounded">
+                            <span class="ml-2 text-sm text-text-secondary">Remember me</span>
+                        </label>
+                        <a href="#" class="text-sm text-primary hover:text-primary-700 transition-smooth" onclick="showForgotPassword()">Forgot password?</a>
+                    </div>
+
+                    <!-- Error Message Display -->
+                    <div id="login-error" class="hidden p-4 bg-error-100 border border-error text-error text-sm rounded-lg">
+                        <div class="flex items-center">
+                            <svg class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                            </svg>
+                            <span id="login-error-message"></span>
+                        </div>
+                    </div>
+
+                    <!-- Success Message Display -->
+                    <div id="login-success" class="hidden p-4 bg-success-100 border border-success text-success text-sm rounded-lg">
+                        <div class="flex items-center">
+                            <svg class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Login successful! Redirecting...</span>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" id="login-btn" class="btn-primary w-full">
+                        <span id="login-btn-text">Sign In</span>
+                        <svg id="login-loading" class="hidden animate-spin h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="m4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Footer Links -->
+            <div class="text-center">
+                <p class="text-sm text-text-secondary">
+                    Don't have an account? 
+                    <a href="contact_us_page.html" class="text-primary hover:text-primary-700 transition-smooth font-medium">Contact HR</a>
+                </p>
+                <div class="mt-4">
+                    <a href="index.html" class="text-sm text-text-secondary hover:text-primary transition-smooth">
+                        ← Back to V3 Technologies
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div id="forgot-password-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 px-4">
+        <div class="bg-white rounded-lg p-6 max-w-md w-full">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-semibold text-text-primary">Reset Password</h3>
+                <button onclick="hideForgotPassword()" class="text-secondary-400 hover:text-text-primary">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <p class="text-sm text-text-secondary mb-4">Enter your email address and we'll send you a link to reset your password.</p>
+            <form id="forgot-password-form">
+                <div class="mb-4">
+                    <label for="reset-email" class="form-label">Email Address</label>
+                    <input type="email" id="reset-email" name="reset-email" class="form-input" placeholder="Enter your email" required>
+                </div>
+                <div class="flex gap-3">
+                    <button type="button" onclick="hideForgotPassword()" class="btn-secondary flex-1">Cancel</button>
+                    <button type="submit" class="btn-primary flex-1">Send Reset Link</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Demo credentials for testing
+        const demoCredentials = {
+            admin: {
+                username: 'admin',
+                password: 'admin123',
+                role: 'admin'
+            },
+            user: {
+                username: 'user',
+                password: 'user123',
+                role: 'user'
+            }
+        };
+
+        // Password toggle functionality
+        document.getElementById('toggle-password').addEventListener('click', function() {
+            const passwordInput = document.getElementById('password');
+            const eyeOpen = document.getElementById('eye-open');
+            const eyeClosed = document.getElementById('eye-closed');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeOpen.classList.add('hidden');
+                eyeClosed.classList.remove('hidden');
+            } else {
+                passwordInput.type = 'password';
+                eyeOpen.classList.remove('hidden');
+                eyeClosed.classList.add('hidden');
+            }
+        });
+
+        // Form validation
+        function validateLoginForm() {
+            let isValid = true;
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const role = document.getElementById('role').value;
+
+            // Clear previous errors
+            document.querySelectorAll('.error-message').forEach(el => el.classList.add('hidden'));
+            document.getElementById('login-error').classList.add('hidden');
+
+            // Username validation
+            if (!username) {
+                document.getElementById('username-error').textContent = 'Username or email is required';
+                document.getElementById('username-error').classList.remove('hidden');
+                isValid = false;
+            }
+
+            // Password validation
+            if (!password) {
+                document.getElementById('password-error').textContent = 'Password is required';
+                document.getElementById('password-error').classList.remove('hidden');
+                isValid = false;
+            } else if (password.length < 6) {
+                document.getElementById('password-error').textContent = 'Password must be at least 6 characters';
+                document.getElementById('password-error').classList.remove('hidden');
+                isValid = false;
+            }
+
+            // Role validation
+            if (!role) {
+                document.getElementById('role-error').textContent = 'Please select your account type';
+                document.getElementById('role-error').classList.remove('hidden');
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        // Authentication function
+        function authenticateUser(username, password, role) {
+            // Check against demo credentials
+            const credential = Object.values(demoCredentials).find(cred => 
+                (cred.username === username || cred.username === username.toLowerCase()) && 
+                cred.password === password && 
+                cred.role === role
+            );
+
+            return credential ? { success: true, role: credential.role } : { success: false };
+        }
+
+        // Login form submission
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (!validateLoginForm()) {
+                return;
+            }
+
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const role = document.getElementById('role').value;
+            const rememberMe = document.getElementById('remember-me').checked;
+
+            // Show loading state
+            const loginBtn = document.getElementById('login-btn');
+            const loginBtnText = document.getElementById('login-btn-text');
+            const loginLoading = document.getElementById('login-loading');
+            
+            loginBtn.disabled = true;
+            loginBtnText.textContent = 'Signing In...';
+            loginLoading.classList.remove('hidden');
+
+            // Simulate authentication delay
+            setTimeout(() => {
+                const authResult = authenticateUser(username, password, role);
+                
+                if (authResult.success) {
+                    // Store session information
+                    const sessionData = {
+                        username: username,
+                        role: authResult.role,
+                        loginTime: new Date().toISOString(),
+                        rememberMe: rememberMe
+                    };
+                    
+                    if (rememberMe) {
+                        localStorage.setItem('v3TechSession', JSON.stringify(sessionData));
+                    } else {
+                        sessionStorage.setItem('v3TechSession', JSON.stringify(sessionData));
+                    }
+
+                    // Show success message
+                    document.getElementById('login-success').classList.remove('hidden');
+                    
+                    // Redirect based on role
+                    setTimeout(() => {
+                        if (authResult.role === 'admin') {
+                            window.location.href = 'admin_dashboard.html';
+                        } else {
+                            window.location.href = 'services_page.html';
+                        }
+                    }, 1500);
+                } else {
+                    // Show error message
+                    document.getElementById('login-error-message').textContent = 'Invalid credentials or incorrect role selection. Please try again.';
+                    document.getElementById('login-error').classList.remove('hidden');
+                    
+                    // Reset button state
+                    loginBtn.disabled = false;
+                    loginBtnText.textContent = 'Sign In';
+                    loginLoading.classList.add('hidden');
+                }
+            }, 1000);
+        });
+
+        // Forgot password functionality
+        function showForgotPassword() {
+            document.getElementById('forgot-password-modal').classList.remove('hidden');
+        }
+
+        function hideForgotPassword() {
+            document.getElementById('forgot-password-modal').classList.add('hidden');
+            document.getElementById('forgot-password-form').reset();
+        }
+
+        // Forgot password form submission
+        document.getElementById('forgot-password-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('reset-email').value.trim();
+            
+            if (email) {
+                alert(`Password reset link has been sent to ${email}. Please check your email.`);
+                hideForgotPassword();
+            }
+        });
+
+        // Close modal when clicking outside
+        document.getElementById('forgot-password-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                hideForgotPassword();
+            }
+        });
+
+        // Check for existing session on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const sessionData = localStorage.getItem('v3TechSession') || sessionStorage.getItem('v3TechSession');
+            
+            if (sessionData) {
+                try {
+                    const session = JSON.parse(sessionData);
+                    const loginTime = new Date(session.loginTime);
+                    const currentTime = new Date();
+                    const timeDiff = currentTime - loginTime;
+                    
+                    // Session expires after 24 hours
+                    if (timeDiff < 24 * 60 * 60 * 1000) {
+                        // Valid session exists, redirect to appropriate page
+                        if (session.role === 'admin') {
+                            window.location.href = 'admin_dashboard.html';
+                        } else {
+                            window.location.href = 'index.html';
+                        }
+                    } else {
+                        // Session expired, clear storage
+                        localStorage.removeItem('v3TechSession');
+                        sessionStorage.removeItem('v3TechSession');
+                    }
+                } catch (error) {
+                    console.error('Error parsing session data:', error);
+                    localStorage.removeItem('v3TechSession');
+                    sessionStorage.removeItem('v3TechSession');
+                }
+            }
+        });
+
+        // Demo credentials info display
+        console.log('Demo Credentials for Testing:');
+        console.log('Admin: username="admin", password="admin123", role="Administrator"');
+        console.log('User: username="user", password="user123", role="User"');
+    </script>
+
+    <script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+    <script id="dhws-elementInspector" src="../public/dhws-web-inspector.js"></script>
+    <script id="dhws-errorTracker" src="../public/dhws-error-tracker.js"></script>
+</body>
+</html>
