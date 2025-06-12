@@ -16,7 +16,7 @@
         <div class="max-w-md w-full space-y-8">
             <!-- Header -->
             <div class="text-center">
-                <a href="index.html" class="inline-flex items-center justify-center mb-8">
+                <a href="{{ url_for('home') }}" class="inline-flex items-center justify-center mb-8">
                     <img src="../static/Logo.png" alt="V3 Technologies Logo" class="h-12 w-auto">
                     <span class="ml-3 text-2xl font-bold text-text-primary">V3 Technologies</span>
                 </a>
@@ -122,7 +122,7 @@
                     <a href="contact_us_page.html" class="text-primary hover:text-primary-700 transition-smooth font-medium">Contact HR</a>
                 </p>
                 <div class="mt-4">
-                    <a href="index.html" class="text-sm text-text-secondary hover:text-primary transition-smooth">
+                    <a href="{{ url_for('home') }}" class="text-sm text-text-secondary hover:text-primary transition-smooth">
                         ← Back to V3 Technologies
                     </a>
                 </div>
