@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
 "scripts": {
-  "build:css": "tailwindcss -i ./tailwind.css -o ./static/css/main.css --minify"
-},
+  "build:css": "npx tailwindcss -i ./tailwind.css -o ./static/css/main.css --minify"
+}
+,
 
   "keywords": [],
   "author": "",
