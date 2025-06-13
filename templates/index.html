@@ -18,7 +18,7 @@
 
                 <!-- Logo -->
                 <div class="flex-shrink-0">
-                    <a href="homepage.html" class="flex items-center space-x-2">
+                    <a href="{{ url_for('home') }}" class="flex items-center space-x-2">
                         <img src="../static/Logo.png" alt="V3 Technologies Logo" class="h-10 w-auto object-contain">
                         <span class="text-xl font-semibold text-text-primary hidden sm:inline">V3 Technologies</span>
                     </a>
@@ -97,8 +97,8 @@
                         accelerate growth for businesses worldwide.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a href="services_page.html" class="btn-primary text-center">View Our Services</a>
-                        <a href="careers_page.html" class="btn-secondary text-center">Join Our Team</a>
+                        <a href="{{ url_for('services') }}" class="btn-primary text-center">View Our Services</a>
+                        <a href="{{ url_for('careers') }}" class="btn-secondary text-center">Join Our Team</a>
                     </div>
                 </div>
                 <div class="relative">
