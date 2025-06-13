@@ -52,5 +52,10 @@ def submit_contact():
     flash("Thank you for reaching out! We'll get back to you soon.")
     return redirect(url_for('contact_page'))
 
+@app.route('/admin')
+def admin_dashboard():
+    return render_template('admin_dashboard.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)
