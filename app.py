@@ -20,6 +20,11 @@ def clients():
 def login():
     return render_template('login_page.html')
 
+@app.route('/apply')
+def apply():
+    return render_template('job_application_form.html')
+
+
 @app.route('/careers', methods=['GET', 'POST'])
 def careers():
 
@@ -55,7 +60,6 @@ def submit_contact():
 @app.route('/admin')
 def admin_dashboard():
     return render_template('admin_dashboard.html')
-
 
 if __name__ == '__main__':
     app.run(debug=True)
