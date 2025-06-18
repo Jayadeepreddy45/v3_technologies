@@ -76,7 +76,6 @@ class Application(db.Model):
 
 @app.route('/submit_application', methods=['POST'])
 def submit_application():
-    
     form = request.form
     files = request.files
 
