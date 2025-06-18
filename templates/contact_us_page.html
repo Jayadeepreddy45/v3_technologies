@@ -252,7 +252,7 @@
           <div class="card">
             <h2 class="text-3xl font-bold text-text-primary mb-8">Send us a Message</h2>
 
-            <form id="contactForm" class="space-y-6">
+            <form id="contactForm" action="/submit_contact" method="POST" class="space-y-6">
               <!-- Name -->
               <div>
                 <label for="name" class="form-label">Full Name *</label>
@@ -308,10 +308,7 @@
               </div>
 
               <!-- Submit Button -->
-              <form action="/submit_contact" method="POST" class="space-y-4">
                 <button type="submit" class="btn-primary">Send Message</button>
-              </form>
-
 
               <!-- Success Message -->
               <div id="successMessage" class="bg-success-100 border border-success text-success p-4 rounded-md hidden">
@@ -543,66 +540,7 @@
       }
     });
 
-    // Contact Form Validation and Submission
-    document.getElementById('contactForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      // Reset previous errors
-      const errorElements = document.querySelectorAll('[id$="Error"]');
-      errorElements.forEach(el => el.classList.add('hidden'));
-
-      let isValid = true;
-
-      // Validate name
-      const name = document.getElementById('name').value.trim();
-      if (!name) {
-        document.getElementById('nameError').classList.remove('hidden');
-        isValid = false;
-      }
-
-      // Validate email
-      const email = document.getElementById('email').value.trim();
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!email || !emailRegex.test(email)) {
-        document.getElementById('emailError').classList.remove('hidden');
-        isValid = false;
-      }
-
-      // Validate phone (if provided)
-      const phone = document.getElementById('phone').value.trim();
-      const phoneRegex = /^\(\d{3}\)\s\d{3}-\d{4}$/;
-      if (phone && !phoneRegex.test(phone)) {
-        document.getElementById('phoneError').classList.remove('hidden');
-        isValid = false;
-      }
-
-      // Validate inquiry type
-      const inquiryType = document.getElementById('inquiryType').value;
-      if (!inquiryType) {
-        document.getElementById('inquiryTypeError').classList.remove('hidden');
-        isValid = false;
-      }
-
-      // Validate message
-      const message = document.getElementById('message').value.trim();
-      if (!message) {
-        document.getElementById('messageError').classList.remove('hidden');
-        isValid = false;
-      }
-
-      if (isValid) {
-        // Show success message
-        document.getElementById('successMessage').classList.remove('hidden');
-
-        // Reset form
-        this.reset();
-
-        // Hide success message after 5 seconds
-        setTimeout(() => {
-          document.getElementById('successMessage').classList.add('hidden');
-        }, 5000);
-      }
-    });
+   
 
     // Phone number formatting
     document.getElementById('phone').addEventListener('input', function (e) {
