@@ -1,0 +1,41 @@
+{% extends "base_auth.html" %}
+{% block title %}Login - V3{% endblock %}
+
+{% block content %}
+<div class="min-h-screen flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div class="w-full max-w-md space-y-8">
+        <div class="bg-white rounded-xl shadow-elevation-2 p-8">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold text-text-primary">Welcome Back</h2>
+                <p class="text-sm text-text-secondary">Sign in to your V3 account</p>
+            </div>
+            <form method="POST" action="{{ url_for('login') }}" class="space-y-6">
+                <div>
+                    <label for="email" class="block text-sm font-medium text-text-primary mb-1">Email Address</label>
+                    <input type="email" name="email" required
+                        class="w-full px-4 py-3 border border-border rounded-md focus:outline-none focus:ring-primary focus:border-primary transition" />
+                </div>
+                <div>
+                    <label for="password" class="block text-sm font-medium text-text-primary mb-1">Password</label>
+                    <input type="password" name="password" required
+                        class="w-full px-4 py-3 border border-border rounded-md focus:outline-none focus:ring-primary focus:border-primary transition" />
+                </div>
+                <div class="flex items-center justify-between">
+                    <label class="flex items-center text-sm text-text-secondary">
+                        <input type="checkbox" class="mr-2" /> Remember me
+                    </label>
+                    <a href="#" class="text-sm text-primary hover:text-primary-700 font-medium">Forgot password?</a>
+                </div>
+                <button type="submit"
+                    class="w-full bg-primary text-white py-3 px-4 rounded-md font-medium hover:bg-primary-700 transition">
+                    Sign In
+                </button>
+            </form>
+            <div class="mt-4 text-center text-sm text-text-secondary">
+                Don’t have an account?
+                <a href="{{ url_for('register') }}" class="text-primary hover:text-primary-700 font-medium">Register Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
